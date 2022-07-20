@@ -1,0 +1,3 @@
+-- 0. Se instalo la extension JavaScript (ES6) code snippets
+-- 1. Se instalo la Live Server
+-- 2. Se instalo la Material Icon Theme
