@@ -1,0 +1,3 @@
+--  Instalar las siguientes extensiones en visual studio code
+    -- Prettier - Code Formatter
+    -- Live Server
