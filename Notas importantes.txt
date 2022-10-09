@@ -19,10 +19,12 @@
         .eslintrc.json
 
     --  Comprobacion de errores con ESLint
-        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion$ eslint js/app.js
+        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion
+        $ eslint js/app.js
 
     --  Si en caso le faltaran un ; al final, se agregar la siguiente linea de comandos para corregirlo
-        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion$ eslint js/app.js --fix
+        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion
+        $ eslint js/app.js --fix
 
 --  Informacion importante
     https://developer.mozilla.org/es/docs/Web/HTTP
