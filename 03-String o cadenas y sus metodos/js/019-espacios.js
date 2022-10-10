@@ -4,12 +4,12 @@ console.log(producto)
 console.log(producto.length)
 
 // Eliminar espacios del inicio
-console.log(producto.trimStart())
+console.log(`Uso de trimStart(): ${producto.trimStart()}`)
 
 // Eliminar espacios al final
-console.log(producto.trimEnd())
+console.log(`Uso de trimEnd(): ${producto.trimEnd()}`)
 
 // Eliminar espacio del inicio y final
-console.log(producto.trimStart().trimEnd())
+console.log(`Uso de trimStart() y trimEnd(): ${producto.trimStart().trimEnd()}`)
 
-console.log(producto.trim())
+console.log(`Uso de trim(): ${producto.trim()}`)
