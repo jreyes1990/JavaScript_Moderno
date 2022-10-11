@@ -17,3 +17,11 @@ console.log(producto)
 console.log(producto.informacion)
 console.log(producto.informacion.medidas)
 console.log(producto.informacion.fabricacion)
+
+
+const {nombre, informacion, informacion: {fabricacion, fabricacion: {pais}}} = producto;
+
+console.log(nombre)
+console.log(informacion)
+console.log(fabricacion)
+console.log(pais)
