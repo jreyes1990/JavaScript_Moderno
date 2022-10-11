@@ -8,10 +8,21 @@ const producto = {
 
 console.log(producto)
 
-Object.freeze(producto);
+// Congelar el objeto, no puede crear, modificar y eliminar
+//Object.freeze(producto);
 
-console.log(Object.isFrozen(producto))
+console.log(`Esta congelado?: ${Object.isFrozen(producto)}`)
 
-producto.imagen = "imagen.jpg";
+//producto.imagen = "imagen.jpg";
+
+console.log(producto)
+
+// Sellar el objeto, solo puede modificar datos de un objeto
+
+Object.seal(producto);
+
+console.log(`Esta sellado?: ${Object.isSealed(producto)}`)
+
+producto.disponible = false;
 
 console.log(producto)
