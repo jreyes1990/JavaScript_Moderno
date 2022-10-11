@@ -1,6 +1,6 @@
-const nombre = "Monitor 20 pulgadas";
-const precio = 300;
-const disponible = true;
+//const nombre = "Monitor 20 pulgadas";
+//const precio = 300;
+//const disponible = true;
 
 // Un objeto agrupa todo en una sola variable
 
@@ -26,3 +26,9 @@ console.log(producto)
  delete producto.disponible
 
  console.log(producto)
+
+
+ // Destructuring (sacar de una estructura) objeto
+ const {nombre, precio} = producto;
+
+ console.log(nombre, precio)
