@@ -16,3 +16,13 @@ console.log(producto)
 console.log(producto.nombre)
 
 console.log(producto['nombre'])
+
+// Agregar nuevas propiedades al objeto
+producto.imagen = "imagen.jpg";
+
+console.log(producto)
+
+// Eliminar una propiedad del objeto
+ delete producto.disponible
+
+ console.log(producto)
