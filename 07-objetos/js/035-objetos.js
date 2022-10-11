@@ -12,3 +12,7 @@ const producto = {
 }
 
 console.log(producto)
+
+console.log(producto.nombre)
+
+console.log(producto['nombre'])
