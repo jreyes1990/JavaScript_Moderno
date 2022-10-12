@@ -1,5 +1,6 @@
 const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio'];
 
+meses[0] = 'Nuevo Mes';
 console.table(meses)
 
 for(let i=0; i<meses.length; i++){
