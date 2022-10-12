@@ -17,3 +17,7 @@ console.log(producto2)
 
 const producto3 = new Producto('Television', 100);
 console.log(producto3)
+
+console.log(Object.keys(producto))
+console.log(Object.values(producto))
+console.log(Object.entries(producto))
