@@ -35,3 +35,13 @@ const producto3 = {
 carrito.unshift(producto3);
 
 console.table(carrito)
+
+let resultado;
+
+resultado = [...carrito, producto];
+
+resultado = [...resultado, producto2];
+
+resultado = [producto3, ...resultado];
+
+console.table(resultado)
