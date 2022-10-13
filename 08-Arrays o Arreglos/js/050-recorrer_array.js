@@ -74,3 +74,15 @@ const numeros = [10, 20, 30, 40, 50];
 const [ primero, ...tercero ] = numeros;
 
 console.table(tercero)
+
+/*#########################################################################################################################*/
+// Iterar un Array
+carrito.forEach(function(producto){
+    console.log(`${producto.nombre} - Precio: ${producto.precio}`)
+});
+
+/*#########################################################################################################################*/
+// Uso de map
+carrito.map(function(producto){
+    console.log(`${producto.nombre} - Precio: ${producto.precio}`)
+});
