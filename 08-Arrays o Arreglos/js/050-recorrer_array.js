@@ -66,3 +66,11 @@ console.table(carrito)
 
 carrito.splice(1, 1);
 console.table(carrito)
+
+/*#########################################################################################################################*/
+// Destructuring con arreglos
+const numeros = [10, 20, 30, 40, 50];
+
+const [ primero, ...tercero ] = numeros;
+
+console.table(tercero)
