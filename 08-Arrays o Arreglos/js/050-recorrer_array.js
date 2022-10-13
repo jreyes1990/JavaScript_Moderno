@@ -45,3 +45,24 @@ resultado = [...resultado, producto2];
 resultado = [producto3, ...resultado];
 
 console.table(resultado)
+
+/*#########################################################################################################################*/
+const producto4 = {
+    nombre: 'Celular 2',
+    precio: 100
+}
+
+carrito.push(producto4);
+
+console.table(carrito)
+
+// Eliminar ultimo elemento de un arreglo
+carrito.pop();
+console.table(carrito)
+
+// Eliminar del inicio del arreglo
+carrito.shift();
+console.table(carrito)
+
+carrito.splice(1, 1);
+console.table(carrito)
