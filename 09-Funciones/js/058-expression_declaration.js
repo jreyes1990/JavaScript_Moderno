@@ -15,3 +15,11 @@ const sumar2 = function(){
 }
 
 sumar2();
+
+console.log(`${seperador} FUNCION PARAMETRO POR DEFAULT`)
+
+function saludar(nombre='Desconocido', apellido='No tiene apellido'){
+    console.log(`Hola ${nombre} ${apellido}`)
+}
+
+saludar('Jolberth','Reyes')
