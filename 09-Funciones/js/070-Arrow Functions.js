@@ -1,20 +1,24 @@
 const reproductor = {
-  reproducir: function (id) {
-    console.log(`Reproduciendo cancion con el id ${id}`)
+  cancion: '',
+  reproducir: id => console.log(`Reproduciendo cancion con el id ${id}`),
+  pausar: () => console.log('Pausando .....'),
+  borrar: id => console.log(`Borrando cancion..... ${id}`),
+  crearPlayList: nombre => console.log(`Creando la playlist de ${nombre}`),
+  reproducirPlayList: nombre => console.log(`Reproduciendo la playlist ${nombre}`),
+
+  // set: Agregando los valores
+  set nuevaCancion(cancion){
+    this.cancion = cancion;
+    console.log(`Añadiendo ${cancion}`);
   },
-  pausar: function(){
-    console.log('Pausando .....')
-  },
-  borrar: function(id){
-    console.log(`Borrando cancion..... ${id}`)
-  },
-  crearPlayList: function(nombre){
-    console.log(`Creando la playlist de ${nombre}`)
-  },
-  reproducirPlayList: function(nombre){
-    console.log(`Reproduciendo la playlist ${nombre}`)
+  // get: Obteniendo los valores
+  get obtenerCancion(){
+    console.log(`${this.cancion}`);
   }
 }
+
+reproductor.nuevaCancion = 'Enter Sandman';
+reproductor.obtenerCancion;
 
 reproductor.reproducir(30);
 reproductor.reproducir(20);
