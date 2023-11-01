@@ -13,7 +13,7 @@ b = 30;
 
 console.log(`a = ${a} y b = ${b}`);
 
-console.log('%c Mis variables', 'color: blue; font-weight: bold'); // Aplicando CSS al console.log
+console.log('%c *** Mis variables ***', 'color: blue; font-weight: bold'); // Aplicando CSS al console.log
 console.warn({b}); // Mensaje de alerta
 console.error({a}); // Mensaje de error
 console.info({c});
