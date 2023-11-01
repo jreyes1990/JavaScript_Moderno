@@ -28,3 +28,8 @@
 
 --  Informacion importante
     https://developer.mozilla.org/es/docs/Web/HTTP
+    
+/******************************************************************************/
+/***** SECCION 2 - INTRODUCCION 
+       - SI DESEA EJECUTAR UN ARCHIVO DE JS CON NODE JS, EJECUTAR LO SIGUIENTE.
+         node <nombre_archivo>.js
