@@ -37,3 +37,5 @@
        - QUE ES POLYFILL:
          Es un codigo que provee el funcionamiento de una nueva caracteristica de JavaScript (ES6), en veriones viejas como ES5
          
+       - EJECUTAR UN ARCHIVO DE JS CON NODE JS, EJECUTAR LO SIGUIENTE.
+         node assets/js/alerts.js
