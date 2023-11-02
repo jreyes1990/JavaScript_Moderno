@@ -30,7 +30,7 @@
     https://developer.mozilla.org/es/docs/Web/HTTP
     
 /******************************************************************************/
-/***** SECCION 2 - INTRODUCCION 
+-----  SECCION 2 - INTRODUCCION 
        - SI DESEA EJECUTAR UN ARCHIVO DE JS CON NODE JS, EJECUTAR LO SIGUIENTE.
          node <nombre_archivo>.js
          
@@ -41,7 +41,7 @@
          node assets/js/alerts.js
          
 /******************************************************************************/
-/***** SECCION 3 - FUNDAMENTO JAVASCRIPT
+-----  SECCION 3 - FUNDAMENTO JAVASCRIPT
        - TIPO DE DATO DE UNA VARIABLE:
          Describe el contenido del valor que tiene la variable.
          
@@ -58,3 +58,7 @@
          
        - PALABRAS RESERVADAS:
          Son palabras que tienen un uso especifico.
+         
+       - ARREGLOS:
+         Son un objeto muy parecido a una lista de informacion, que contiene un grupo de elementos.
+         Usualmente, esa informacion dentro del arreglo es del mismo tipo de dato.
