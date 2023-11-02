@@ -56,4 +56,5 @@
          5. String ->      Una cadena de caracteres, ej: Palabras, nombre de personas.
          6. Symbol ->      Es un valor unico que no es igual a ningun otro valor.
          
-       
+       - PALABRAS RESERVADAS:
+         Son palabras que tienen un uso especifico.
