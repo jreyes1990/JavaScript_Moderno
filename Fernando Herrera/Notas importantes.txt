@@ -62,3 +62,7 @@
        - ARREGLOS:
          Son un objeto muy parecido a una lista de informacion, que contiene un grupo de elementos.
          Usualmente, esa informacion dentro del arreglo es del mismo tipo de dato.
+         
+/******************************************************************************/
+-----  SECCION 5 - LABORATORIO 1 (BLACKJACK)
+       - Descarga UNDERSCORE.JS, ENLACE: https://underscorejs.org/
