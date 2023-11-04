@@ -19,3 +19,17 @@ if (dia === 0){
 }else{
   console.log('No es Lunes ni Domingo');
 }
+
+console.log('%c LABORATORIO - ALTERNATIVA IF Y ELSE', 'color: yellow; font-weight: bold'); // Aplicando CSS al console.log
+const diaSemana = [
+  {dia: 0, nombre: 'Domingo'},
+  {dia: 1, nombre: 'Lunes'},
+  {dia: 2, nombre: 'Martes'},
+  {dia: 3, nombre: 'Miercoles'},
+  {dia: 4, nombre: 'Jueves'},
+  {dia: 5, nombre: 'Viernes'},
+  {dia: 6, nombre: 'Sabado'},
+];
+
+dia = 5;
+console.log(diaSemana[dia] || 'Dia no definido');
