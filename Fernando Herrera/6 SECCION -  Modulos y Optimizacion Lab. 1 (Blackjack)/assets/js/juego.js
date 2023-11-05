@@ -11,22 +11,37 @@
   'use strict'
 
   let deck = [];
-  const tipos = ['C','D','H','S'];
-  const especiales = ['A','J','Q','K'];
-  let puntos = 0;
-  let puntosJugador = 0;
-  let puntosComputadora = 0;
+  const tipos = ['C','D','H','S'],
+        especiales = ['A','J','Q','K'];
+  // let puntosJugador = 0,
+  //     puntosComputadora = 0;
+  let puntosJugadores = [];
 
   // TODO: Referencias del HTML
-  const btnPedir = document.querySelector('#btnPedir');
-  const btnDetener = document.querySelector('#btnDetener');
-  const btnNuevo = document.querySelector('#btnNuevo');
-  const divCartasJugador = document.querySelector('#jugador-cartas');
-  const divCartasComputadora = document.querySelector('#computadora-cartas');
+  const btnPedir = document.querySelector('#btnPedir'),
+        btnDetener = document.querySelector('#btnDetener'),
+        btnNuevo = document.querySelector('#btnNuevo');
+  const divCartasJugador = document.querySelector('#jugador-cartas'),
+        divCartasComputadora = document.querySelector('#computadora-cartas');
   const smalls = document.querySelectorAll('small');
+
+  btnPedir.disabled = true;
+  btnDetener.disabled = true;
+
+  // TODO: Esta funcion inicializa el juego
+  const inicializarJuego = (numeroJugadores = 2) => {
+    deck = crearDeck();
+
+    for (let i = 0; i < numeroJugadores; i++) {
+      puntosJugadores.push(0);
+    }
+    console.log({puntosJugadores});
+  }
 
   // TODO: Esta funcion crea una nueva baraja
   const crearDeck = () => {
+    deck = [];
+
     for (let i = 2; i <= 10; i++) {
       for (let tipo of tipos) {
       deck.push(i+tipo); 
@@ -38,29 +53,29 @@
       deck.push(esp+tipo); 
       } 
     }
-    deck = _.shuffle(deck);
 
-    return deck;
+    return _.shuffle(deck);
   }
-  crearDeck();
 
   // TODO: Esta funcion me permite tomar una carta
   const pedirCarta = () => {
     if (deck.length === 0) {
       throw 'No hay cartas en el deck';
     }
-    const carta = deck.pop(); // TODO: pop() -> Remueve el ultimo elemento y lo regresa
     
-    return carta;
+    return deck.pop(); // TODO: pop() -> Remueve el ultimo elemento y lo regresa
   }
 
-  // TODO: Esta funcion me permite pedir una carta
+  // TODO: Esta funcion me permite obtener el valor de una carta
   const valorCarta = (carta) => {
     const valor = carta.substring(0, carta.length-1);
     
-    puntos = (isNaN(valor)) ? (valor==='A') ? 11 : 10 : Number(valor);
-    
-    return puntos;
+    return (isNaN(valor)) ? (valor==='A') ? 11 : 10 : Number(valor);
+  }
+
+  // TODO: Esta funcion me permite acumular los puntos
+  const acumularPuntos = () => {
+
   }
 
   // TODO: Se realizara la funcion para el turno de la computadora
@@ -123,8 +138,7 @@
 
   btnNuevo.addEventListener('click', () => {
     console.clear();
-    deck = [];
-    deck = crearDeck();
+    inicializarJuego();
 
     btnPedir.disabled = false;
     btnDetener.disabled = false;
