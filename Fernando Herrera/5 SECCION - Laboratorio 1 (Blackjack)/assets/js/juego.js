@@ -12,7 +12,7 @@ const especiales = ['A','J','Q','K'];
 
 // TODO: Esta funcion crea una nueva baraja
 const crearDeck = () => {
-  for (let i = 2; i < 10; i++) {
+  for (let i = 2; i <= 10; i++) {
     for (let tipo of tipos) {
      deck.push(i+tipo); 
     }
@@ -23,7 +23,6 @@ const crearDeck = () => {
      deck.push(esp+tipo); 
     } 
   }
-  // console.log(deck);
   deck = _.shuffle(deck);
   console.log(deck);
 
@@ -37,11 +36,18 @@ const pedirCarta = () => {
     throw 'No hay cartas en el deck';
   }
   const carta = deck.pop(); // TODO: pop() -> Remueve el ultimo elemento y lo regresa
-  console.log(deck);
-  console.log(carta);
+  
   return carta;
 }
 
-for (let i = 0; i < 100; i++) {
-  pedirCarta();  
+// TODO: Esta funcion me permite pedir una carta
+const valorCarta = (carta) => {
+  const valor = carta.substring(0, carta.length-1);
+  
+  puntos = (isNaN(valor)) ? (valor==='A') ? 11 : 10 : Number(valor);
+  
+  return puntos;
 }
+
+const valor = valorCarta(pedirCarta());
+console.log({valor});
