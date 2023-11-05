@@ -13,8 +13,6 @@
   let deck = [];
   const tipos = ['C','D','H','S'],
         especiales = ['A','J','Q','K'];
-  // let puntosJugador = 0,
-  //     puntosComputadora = 0;
   let puntosJugadores = [];
 
   // TODO: Referencias del HTML
@@ -22,7 +20,8 @@
         btnDetener = document.querySelector('#btnDetener'),
         btnNuevo = document.querySelector('#btnNuevo');
   const divCartasJugador = document.querySelector('#jugador-cartas'),
-        divCartasComputadora = document.querySelector('#computadora-cartas');
+        divCartasComputadora = document.querySelector('#computadora-cartas'),
+        divCartasJugadores = document.querySelectorAll('.divCartas');
   const smalls = document.querySelectorAll('small');
 
   btnPedir.disabled = true;
@@ -35,7 +34,6 @@
     for (let i = 0; i < numeroJugadores; i++) {
       puntosJugadores.push(0);
     }
-    console.log({puntosJugadores});
   }
 
   // TODO: Esta funcion crea una nueva baraja
@@ -73,22 +71,29 @@
     return (isNaN(valor)) ? (valor==='A') ? 11 : 10 : Number(valor);
   }
 
-  // TODO: Esta funcion me permite acumular los puntos
-  const acumularPuntos = () => {
+  // TODO: Esta funcion me permite acumular los puntos de los jugadores, TURNO: [0]=Primer jugador y el ultimo de la computadora
+  const acumularPuntos = (carta, turno) => {
+    puntosJugadores[turno] = puntosJugadores[turno]+valorCarta(carta);
+    smalls[turno].innerHTML = puntosJugadores[turno];
+    return puntosJugadores[turno];
+  }
 
+  // TODO: Esta funcion me permite crear las cartas
+  const crearCartas = (carta, turno) => {
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${carta}.png`;
+    imgCarta.classList.add('carta');
+    divCartasJugadores[turno].append(imgCarta);
   }
 
   // TODO: Se realizara la funcion para el turno de la computadora
   const turnoComputadora = (puntosMinimos) => {
+    let puntosComputadora = 0;
+
     do {
       const carta = pedirCarta();
-      puntosComputadora = puntosComputadora+valorCarta(carta);
-      smalls[1].innerHTML = puntosComputadora;
-
-      const imgCarta = document.createElement('img');
-      imgCarta.src = `assets/cartas/${carta}.png`;
-      imgCarta.classList.add('carta');
-      divCartasComputadora.append(imgCarta);
+      puntosComputadora = acumularPuntos(carta, puntosJugadores.length-1);
+      crearCartas(carta, puntosJugadores.length-1);
 
       if (puntosMinimos > 21) {
         break;
@@ -96,12 +101,14 @@
     } while ((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
 
     setTimeout(() => {
-      if (puntosComputadora === puntosJugador) {
+      if (puntosComputadora === puntosMinimos) {
         alert('Nadie gana :(');
       }else if(puntosMinimos > 21){
         alert('Computadora gana');
-      }else if((puntosComputadora > 21) || (puntosComputadora > puntosJugador)){
+      }else if(puntosComputadora > 21){
         alert('Jugador gana');
+      }else{
+        alert('Computadora gana');
       }
     }, 150);
   }
@@ -109,13 +116,8 @@
   // TODO: Eventos de boton
   btnPedir.addEventListener('click', () => {
     const carta = pedirCarta();
-    puntosJugador = puntosJugador+valorCarta(carta);
-    smalls[0].innerHTML = puntosJugador;
-
-    const imgCarta = document.createElement('img');
-    imgCarta.src = `assets/cartas/${carta}.png`;
-    imgCarta.classList.add('carta');
-    divCartasJugador.append(imgCarta);
+    const puntosJugador = acumularPuntos(carta, 0);
+    crearCartas(carta, 0);
 
     if (puntosJugador > 21) {
       console.log('Lo siento mucho, ya perdiste');
@@ -133,7 +135,7 @@
   btnDetener.addEventListener('click', () => {
     btnPedir.disabled = true;
     btnDetener.disabled = true;
-    turnoComputadora(puntosJugador);
+    turnoComputadora(puntosJugadores.length-1);
   });
 
   btnNuevo.addEventListener('click', () => {
@@ -143,8 +145,7 @@
     btnPedir.disabled = false;
     btnDetener.disabled = false;
 
-    puntosJugador = 0;
-    puntosComputadora = 0;
+    // puntosJugadores = [];
 
     smalls[0].innerHTML = 0;
     smalls[1].innerHTML = 0;
