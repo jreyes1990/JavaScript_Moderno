@@ -7,7 +7,7 @@
  * 2S = Two of Spades (Espadas)
 */
 // TODO: Uso de patron de modulo
-(() => {
+const miModulo = (() => {
   'use strict'
 
   let deck = [];
@@ -19,9 +19,7 @@
   const btnPedir = document.querySelector('#btnPedir'),
         btnDetener = document.querySelector('#btnDetener'),
         btnNuevo = document.querySelector('#btnNuevo');
-  const divCartasJugador = document.querySelector('#jugador-cartas'),
-        divCartasComputadora = document.querySelector('#computadora-cartas'),
-        divCartasJugadores = document.querySelectorAll('.divCartas');
+  const divCartasJugadores = document.querySelectorAll('.divCartas');
   const smalls = document.querySelectorAll('small');
 
   btnPedir.disabled = true;
@@ -31,9 +29,17 @@
   const inicializarJuego = (numeroJugadores = 2) => {
     deck = crearDeck();
 
+    puntosJugadores = [];
+
     for (let i = 0; i < numeroJugadores; i++) {
       puntosJugadores.push(0);
     }
+
+    smalls.forEach(elem => elem.innerHTML = 0);
+    divCartasJugadores.forEach(elem => elem.innerHTML = '');
+
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
   }
 
   // TODO: Esta funcion crea una nueva baraja
@@ -86,6 +92,23 @@
     divCartasJugadores[turno].append(imgCarta);
   }
 
+  // TODO: Esta funcion evaluara el jugador ganador o perdedor
+  const determinarGanador = () => {
+    const [puntosMinimos, puntosComputadora] = puntosJugadores;
+
+    setTimeout(() => {
+      if(puntosComputadora === puntosMinimos) {
+        alert('Nadie gana :(');
+      } else if (puntosMinimos > 21) {
+        alert('Computadora gana')
+      } else if(puntosComputadora > 21 ||  puntosComputadora > puntosMinimos) {
+        alert('Jugador Gana');
+      } else {
+        alert('Computadora Gana')
+      }
+    }, 150);
+  }
+
   // TODO: Se realizara la funcion para el turno de la computadora
   const turnoComputadora = (puntosMinimos) => {
     let puntosComputadora = 0;
@@ -99,18 +122,7 @@
         break;
       }
     } while ((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
-
-    setTimeout(() => {
-      if (puntosComputadora === puntosMinimos) {
-        alert('Nadie gana :(');
-      }else if(puntosMinimos > 21){
-        alert('Computadora gana');
-      }else if(puntosComputadora > 21){
-        alert('Jugador gana');
-      }else{
-        alert('Computadora gana');
-      }
-    }, 150);
+    determinarGanador();
   }
 
   // TODO: Eventos de boton
@@ -135,22 +147,15 @@
   btnDetener.addEventListener('click', () => {
     btnPedir.disabled = true;
     btnDetener.disabled = true;
-    turnoComputadora(puntosJugadores.length-1);
+    turnoComputadora(puntosJugadores[0]);
   });
 
-  btnNuevo.addEventListener('click', () => {
-    console.clear();
-    inicializarJuego();
+  // btnNuevo.addEventListener('click', () => {
+  //   console.clear();
+  //   inicializarJuego();
+  // });
 
-    btnPedir.disabled = false;
-    btnDetener.disabled = false;
-
-    // puntosJugadores = [];
-
-    smalls[0].innerHTML = 0;
-    smalls[1].innerHTML = 0;
-
-    divCartasJugador.innerHTML = '';
-    divCartasComputadora.innerHTML = '';
-  });
+  return {
+    nuevoJuego: inicializarJuego
+  };
 })();
