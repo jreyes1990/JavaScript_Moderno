@@ -1,4 +1,7 @@
 class Rectangulo{
+  /** 
+   * El # significa que las variables son private, aun no se puede utilizar en los metodos.
+  */
   #area = 0;
 
   constructor(base=0, altura=0){
