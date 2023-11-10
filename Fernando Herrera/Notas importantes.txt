@@ -66,3 +66,19 @@
 /******************************************************************************/
 -----  SECCION 5 - LABORATORIO 1 (BLACKJACK)
        - Descarga UNDERSCORE.JS, ENLACE: https://underscorejs.org/
+       
+/******************************************************************************/
+-----  SECCION 8 - MODULO Y VITE
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite
+         
+       - NOMBRE DEL PROYECTO
+         vite_app
+         
+       - SELECCION DE FRAMEWORK
+         VANILLA
+         
+       - SELECCION DE VARIANT
+         JavaScript
+         
+       
