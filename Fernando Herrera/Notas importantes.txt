@@ -81,4 +81,9 @@
        - SELECCION DE VARIANT
          JavaScript
          
+       - INSTALAR NPM
+         npm install
+         
+       - EJECUTAR NPM
+         npm run dev
        
