@@ -86,4 +86,7 @@
          
        - EJECUTAR NPM
          npm run dev
+         
+       - EJECUTAR NPM EN PRODUCCION
+         npm run build
        
