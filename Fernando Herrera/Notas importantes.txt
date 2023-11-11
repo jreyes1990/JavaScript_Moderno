@@ -90,3 +90,27 @@
        - EJECUTAR NPM EN PRODUCCION
          npm run build
        
+       
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite
+         
+       - NOMBRE DEL PROYECTO
+         blackjack_vite
+         
+       - SELECCION DE FRAMEWORK
+         VANILLA
+         
+       - SELECCION DE VARIANT
+         JavaScript
+         
+       - INSTALAR NPM
+         npm install
+         
+       - EJECUTAR NPM
+         npm run dev
+         
+       - EJECUTAR NPM EN PRODUCCION
+         npm run build
+         
+       - INSTALAR UNDERSCORE, ENLACE: https://www.npmjs.com/package/underscore
+         npm install underscore
