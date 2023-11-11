@@ -1,9 +1,9 @@
 # JavaScript_Moderno
 Repositorio para curso basico
 
-Instalar las siguientes extensiones en visual studio code
-    -- Prettier - Code Formatter
-    -- Live Server
+-- Instalar las siguientes extensiones en visual studio code
+    Prettier - Code Formatter
+    Live Server
 
 --  Uso de comentarios en JavaScript
     // Para comentar una linea de codigo
