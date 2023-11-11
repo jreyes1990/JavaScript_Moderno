@@ -1,0 +1,127 @@
+# JavaScript_Moderno
+Repositorio para curso basico
+
+--  Instalar las siguientes extensiones en visual studio code
+    -- Prettier - Code Formatter
+    -- Live Server
+
+--  Uso de comentarios en JavaScript
+    // Para comentar una linea de codigo
+    /* Para comentar multiples lineas de codigo */
+
+--  Uso de la consola (Pagina web) JavaScript
+    console.log([1,2,3,4])  //Uso de una matriz
+    console.error('Algo salio mal') //Uso para test de errores
+
+--  Link ESLint, para revisar su cumples con la forma de hacer codigo
+    https://eslint.org/docs/latest/user-guide/command-line-interface
+
+    Instalacion en la terminal: sudo npm i -g eslint
+
+    --  Crear archivo eslint
+        .eslintrc.json
+
+    --  Comprobacion de errores con ESLint
+        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion
+        $ eslint js/app.js
+
+    --  Si en caso le faltaran un ; al final, se agregar la siguiente linea de comandos para corregirlo
+        jreyes@jreyes-Inspiron-5567:~/Documentos/Proyectos/JavaScript/JavaScript_Moderno/01 - Introduccion
+        $ eslint js/app.js --fix
+
+--  Informacion importante
+    https://developer.mozilla.org/es/docs/Web/HTTP
+    
+/******************************************************************************/
+-----  SECCION 2 - INTRODUCCION 
+       - SI DESEA EJECUTAR UN ARCHIVO DE JS CON NODE JS, EJECUTAR LO SIGUIENTE.
+         node <nombre_archivo>.js
+         
+       - QUE ES POLYFILL:
+         Es un codigo que provee el funcionamiento de una nueva caracteristica de JavaScript (ES6), en veriones viejas como ES5
+         
+       - EJECUTAR UN ARCHIVO DE JS CON NODE JS, EJECUTAR LO SIGUIENTE.
+         node assets/js/alerts.js
+         
+/******************************************************************************/
+-----  SECCION 3 - FUNDAMENTO JAVASCRIPT
+       - TIPO DE DATO DE UNA VARIABLE:
+         Describe el contenido del valor que tiene la variable.
+         
+       - PRIMITIVOS:
+         Es una informacion que no es un objeto y son inmutables.
+         
+       - 6 TIPOS DE DATOS PRIMITIVOS EN JAVASCRIPT
+         1. Boolean ->     true/false :: Verdadero y Falso.
+         2. Null ->        Sin valor en lo absoluto.
+         3. Undefined ->   Una variable declarada que aun no se le asigna valor.
+         4. Number ->      integers, floats, ets.
+         5. String ->      Una cadena de caracteres, ej: Palabras, nombre de personas.
+         6. Symbol ->      Es un valor unico que no es igual a ningun otro valor.
+         
+       - PALABRAS RESERVADAS:
+         Son palabras que tienen un uso especifico.
+         
+       - ARREGLOS:
+         Son un objeto muy parecido a una lista de informacion, que contiene un grupo de elementos.
+         Usualmente, esa informacion dentro del arreglo es del mismo tipo de dato.
+         
+/******************************************************************************/
+-----  SECCION 5 - LABORATORIO 1 (BLACKJACK)
+       - Descarga UNDERSCORE.JS, ENLACE: https://underscorejs.org/
+       
+/******************************************************************************/
+-----  SECCION 8 - MODULO Y VITE
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite
+         
+       - NOMBRE DEL PROYECTO
+         vite_app
+         
+       - SELECCION DE FRAMEWORK
+         VANILLA
+         
+       - SELECCION DE VARIANT
+         JavaScript
+         
+       - INSTALAR NPM
+         npm install
+         
+       - EJECUTAR NPM
+         npm run dev
+         
+       - EJECUTAR NPM EN PRODUCCION
+         npm run build
+       
+       
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite
+         
+       - NOMBRE DEL PROYECTO
+         blackjack_vite
+         
+       - SELECCION DE FRAMEWORK
+         VANILLA
+         
+       - SELECCION DE VARIANT
+         JavaScript
+         
+       - INSTALAR NPM
+         npm install
+         
+       - EJECUTAR NPM
+         npm run dev
+         
+         
+       - INSTALAR UNDERSCORE, ENLACE: https://www.npmjs.com/package/underscore
+         npm install underscore
+         
+       * DEPLOY EN AMBIENTE PRODUCCION
+         - EJECUTAR EL COMANDO
+           npm run build
+           
+         - COPIAR EL ARCHIVO DE DISTRIBUCION: dist
+         
+         - IR A LA SIGUIENTE URL: https://app.netlify.com/teams/jreyes1990/overview
+         
+         
