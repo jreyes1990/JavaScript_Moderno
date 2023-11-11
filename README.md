@@ -1,7 +1,7 @@
 # JavaScript_Moderno
 Repositorio para curso basico
 
--- Instalar las siguientes extensiones en visual studio code
+-- Instalar las siguientes extensiones en visual studio code.
     Prettier - Code Formatter
     Live Server
 
