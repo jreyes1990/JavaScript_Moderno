@@ -1,3 +1,5 @@
+// import {crearDeck as crearNuevoDeck} from './usecases/crear_deck';
+// import crearDeck, {mi nombre} from './usecases/crear_deck'; // TODO: Es cuando exportamos por default una funcion y tambien exportamos funciones individuales
 import {crearDeck} from './usecases/crear_deck';
 
 /** 
