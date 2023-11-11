@@ -109,8 +109,16 @@
        - EJECUTAR NPM
          npm run dev
          
-       - EJECUTAR NPM EN PRODUCCION
-         npm run build
          
        - INSTALAR UNDERSCORE, ENLACE: https://www.npmjs.com/package/underscore
          npm install underscore
+         
+       * DEPLOY EN AMBIENTE PRODUCCION
+         - EJECUTAR EL COMANDO
+           npm run build
+           
+         - COPIAR EL ARCHIVO DE DISTRIBUCION: dist
+         
+         - IR A LA SIGUIENTE URL: https://app.netlify.com/teams/jreyes1990/overview
+         
+         
