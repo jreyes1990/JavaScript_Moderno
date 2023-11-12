@@ -146,5 +146,8 @@
 
        - EJECUTAR NPM
          npm run dev
+         
+       - INSTALAR NPM (UUID: Identificador único), ENLACE: https://www.npmjs.com/package/uuid
+         npm install uuid
 
 
