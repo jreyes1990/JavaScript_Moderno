@@ -121,4 +121,30 @@
          
          - IR A LA SIGUIENTE URL: https://app.netlify.com/teams/jreyes1990/overview
          
+/******************************************************************************/
+-----  SECCION 10 - LABORATORIO VITE (LISTA DE TAREAS)
+       - DOCUMENTOACION DE VITE:
+         https://vitejs.dev/guide/
          
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite@latest
+         
+       - NOMBRE DEL PROYECTO
+         tareas_app
+         
+       - SELECCION DE FRAMEWORK
+         vanilla
+         
+       - SELECCION DE VARIANT
+         JavaScript
+       
+       - ACCEDEMOS AL PROYECTO CREADO
+         cd tareas_app
+         
+       - INSTALAR NPM
+         npm install
+
+       - EJECUTAR NPM
+         npm run dev
+
+
