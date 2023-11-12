@@ -20,6 +20,40 @@ const initStore = () => {
   console.log('InitStore');
 }
 
+const loadStore = () => {
+  throw new Error('Not implemented');
+}
+
+const addTarea = (description) => {
+  throw new Error('Not implemented');
+}
+
+const toggleTarea = (tareaId) => {
+  throw new Error('Not implemented');
+}
+
+const deleteTarea = (tareaId) => {
+  throw new Error('Not implemented');
+}
+
+const deleteCompleted = () => {
+  throw new Error('Not implemented');
+}
+
+const setSelectedFilter = (newFilter = Filters.All) => {
+  throw new Error('Not implemented');
+}
+
+const getCurrentFilter = () => {
+  throw new Error('Not implemented');
+}
+
 export default {
-  initStore
+  initStore,
+  loadStore,
+  toggleTarea,
+  deleteTarea,
+  deleteCompleted,
+  setSelectedFilter,
+  getCurrentFilter,
 }
