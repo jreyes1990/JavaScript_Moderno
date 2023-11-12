@@ -1,8 +1,6 @@
 // import {crearDeck as crearNuevoDeck} from './usecases/crear_deck';
 // import crearDeck, {mi nombre} from './usecases/crear_deck'; // TODO: Es cuando exportamos por default una funcion y tambien exportamos funciones individuales
-import {crearDeck} from './usecases/crear_deck';
-import {pedirCarta} from './usecases/pedir_carta';
-import {valorCarta} from "./usecases/valor_carta";
+import {crearDeck, pedirCarta, valorCarta} from './usecases';
 
 /** 
  * Se debe alcanzar los 21 punto, si se pasa pierdes
