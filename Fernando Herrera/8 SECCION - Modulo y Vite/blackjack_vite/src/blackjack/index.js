@@ -88,7 +88,7 @@ const determinarGanador = () => {
 
 /**
  * Funcion para el turno de la computadora
- * @param {Number} puntosMinimos Puntos del jugador
+ * @param {Number} puntosMinimos Puntos minimos que la computadora necesita para ganar
  */
 const turnoComputadora = (puntosMinimos) => {
   let puntosComputadora = 0;
