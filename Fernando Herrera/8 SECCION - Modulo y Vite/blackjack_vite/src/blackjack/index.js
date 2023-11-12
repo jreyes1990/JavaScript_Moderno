@@ -1,6 +1,8 @@
 // import {crearDeck as crearNuevoDeck} from './usecases/crear_deck';
 // import crearDeck, {mi nombre} from './usecases/crear_deck'; // TODO: Es cuando exportamos por default una funcion y tambien exportamos funciones individuales
 import {crearDeck} from './usecases/crear_deck';
+import {pedirCarta} from './usecases/pedir_carta';
+import {valorCarta} from "./usecases/valor_carta";
 
 /** 
  * Se debe alcanzar los 21 punto, si se pasa pierdes
@@ -43,30 +45,23 @@ const inicializarJuego = (numeroJugadores = 2) => {
   btnDetener.disabled = false;
 }
 
-// TODO: Esta funcion me permite tomar una carta
-const pedirCarta = () => {
-  if (deck.length === 0) {
-    throw 'No hay cartas en el deck';
-  }
-  
-  return deck.pop(); // TODO: pop() -> Remueve el ultimo elemento y lo regresa
-}
-
-// TODO: Esta funcion me permite obtener el valor de una carta
-const valorCarta = (carta) => {
-  const valor = carta.substring(0, carta.length-1);
-  
-  return (isNaN(valor)) ? (valor==='A') ? 11 : 10 : Number(valor);
-}
-
-// TODO: Esta funcion me permite acumular los puntos de los jugadores, TURNO: [0]=Primer jugador y el ultimo de la computadora
+/**
+ * Funcion me permite acumular los puntos de los jugadores, TURNO: [0]=Primer jugador y el ultimo de la computadora
+ * @param {String} carta 
+ * @param {Arreglo} turno 
+ * @returns {Number} Retorna los puntos acumulados del jugador
+ */
 const acumularPuntos = (carta, turno) => {
   puntosJugadores[turno] = puntosJugadores[turno]+valorCarta(carta);
   smalls[turno].innerHTML = puntosJugadores[turno];
   return puntosJugadores[turno];
 }
 
-// TODO: Esta funcion me permite crear las cartas
+/**
+ * Funcion me permite crear las cartas
+ * @param {String} carta 
+ * @param {Arreglo} turno 
+ */
 const crearCartas = (carta, turno) => {
   const imgCarta = document.createElement('img');
   imgCarta.src = `assets/cartas/${carta}.png`;
@@ -74,7 +69,9 @@ const crearCartas = (carta, turno) => {
   divCartasJugadores[turno].append(imgCarta);
 }
 
-// TODO: Esta funcion evaluara el jugador ganador o perdedor
+/**
+ * Funcion parar evaluar al jugador ganador o perdedor
+ */
 const determinarGanador = () => {
   const [puntosMinimos, puntosComputadora] = puntosJugadores;
 
@@ -91,12 +88,15 @@ const determinarGanador = () => {
   }, 150);
 }
 
-// TODO: Se realizara la funcion para el turno de la computadora
+/**
+ * Funcion para el turno de la computadora
+ * @param {Number} puntosMinimos Puntos del jugador
+ */
 const turnoComputadora = (puntosMinimos) => {
   let puntosComputadora = 0;
 
   do {
-    const carta = pedirCarta();
+    const carta = pedirCarta(deck);
     puntosComputadora = acumularPuntos(carta, puntosJugadores.length-1);
     crearCartas(carta, puntosJugadores.length-1);
 
@@ -109,7 +109,7 @@ const turnoComputadora = (puntosMinimos) => {
 
 // TODO: Eventos de boton
 btnPedir.addEventListener('click', () => {
-  const carta = pedirCarta();
+  const carta = pedirCarta(deck);
   const puntosJugador = acumularPuntos(carta, 0);
   crearCartas(carta, 0);
 
