@@ -11,6 +11,8 @@ const state = {
     new Tarea('Piedra del alma'),
     new Tarea('Piedra del infinito'),
     new Tarea('Piedra del tiempo'),
+    new Tarea('Piedra del poder'),
+    new Tarea('Piedra de la realidad'),
   ],
   filter: Filters.All
 }
@@ -43,7 +45,12 @@ const addTarea = (description) => {
 }
 
 const toggleTarea = (tareaId) => {
-  throw new Error('Not implemented');
+  state.tareas = state.tareas.map(tarea => {
+    if(tarea.id === tareaId){
+      tarea.done = !tarea.done;
+    }
+    return tarea;
+  });
 }
 
 const deleteTarea = (tareaId) => {
