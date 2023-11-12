@@ -24,8 +24,22 @@ const loadStore = () => {
   throw new Error('Not implemented');
 }
 
+const getTareas = (filter = Filters.All) => {
+  switch(filter){
+    case Filters.All:
+      return [...state.tareas];
+    case Filters.Completed:
+      return state.tareas.filter(tarea => tarea.done);
+    case Filters.Pending:
+      return state.tareas.filter(tarea => !tarea.done);
+    default:
+      throw new Error(`Option ${filter} is not valid`);
+  }
+}
+
 const addTarea = (description) => {
-  throw new Error('Not implemented');
+  if(!description) throw new Error('Description is required');
+  state.tareas.push(new Tarea(description));
 }
 
 const toggleTarea = (tareaId) => {
@@ -33,19 +47,23 @@ const toggleTarea = (tareaId) => {
 }
 
 const deleteTarea = (tareaId) => {
-  throw new Error('Not implemented');
+  state.tareas = state.tareas.filter(tarea => tarea.id !== tareaId);
 }
 
 const deleteCompleted = () => {
-  throw new Error('Not implemented');
+  state.tareas = state.tareas.filter(tarea => tarea.done);
 }
 
+/**
+ * 
+ * @param {Filters} newFilter 
+ */
 const setSelectedFilter = (newFilter = Filters.All) => {
-  throw new Error('Not implemented');
+  state.filter = newFilter;
 }
 
 const getCurrentFilter = () => {
-  throw new Error('Not implemented');
+  return state.filter;
 }
 
 export default {
