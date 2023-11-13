@@ -76,6 +76,7 @@ const getCurrentFilter = () => {
 export default {
   initStore,
   loadStore,
+  getTareas,
   toggleTarea,
   deleteTarea,
   deleteCompleted,
