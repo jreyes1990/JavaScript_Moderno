@@ -4,6 +4,7 @@ import { renderTareas } from './use_cases';
 
 const elementIds = {
   tareaList: '.todo-list',
+  newTodoInput: '#new-todo-input',
 }
 
 /**
@@ -24,4 +25,17 @@ export const App = (elementoId) => {
     document.querySelector(elementoId).append(app);
     displayTareas();
   })();
+
+  // TODO: Referencias HTML
+  const newDescriptionInput = document.querySelector(elementIds.newTodoInput);
+
+  // TODO: Listeners
+  newDescriptionInput.addEventListener('keyup', (event) => {
+    if(event.keyCode !== 13) return;
+    if(event.target.value.trim().length === 0) return;
+
+    tareaStore.addTarea(event.target.value);
+    displayTareas();
+    event.target.value = '';
+  });
 }

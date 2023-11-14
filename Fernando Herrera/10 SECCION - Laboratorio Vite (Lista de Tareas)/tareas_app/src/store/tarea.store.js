@@ -77,6 +77,7 @@ export default {
   initStore,
   loadStore,
   getTareas,
+  addTarea,
   toggleTarea,
   deleteTarea,
   deleteCompleted,
