@@ -18,12 +18,20 @@ const state = {
 }
 
 const initStore = () => {
-  console.log(state);
+  loadStore();
   console.log('InitStore');
 }
 
 const loadStore = () => {
-  throw new Error('Not implemented');
+  if(!localStorage.getItem('state')) return;
+
+  const {tareas=[], filter=Filters.All} = JSON.parse(localStorage.getItem('state'));
+  state.tareas = tareas;
+  state.filter = filter;
+}
+
+const saveStateStorage = () => {
+  localStorage.setItem('state', JSON.stringify(state));
 }
 
 const getTareas = (filter = Filters.All) => {
@@ -42,6 +50,7 @@ const getTareas = (filter = Filters.All) => {
 const addTarea = (description) => {
   if(!description) throw new Error('Description is required');
   state.tareas.push(new Tarea(description));
+  saveStateStorage();
 }
 
 const toggleTarea = (tareaId) => {
@@ -51,14 +60,17 @@ const toggleTarea = (tareaId) => {
     }
     return tarea;
   });
+  saveStateStorage();
 }
 
 const deleteTarea = (tareaId) => {
   state.tareas = state.tareas.filter(tarea => tarea.id !== tareaId);
+  saveStateStorage();
 }
 
 const deleteCompleted = () => {
   state.tareas = state.tareas.filter(tarea => tarea.done);
+  saveStateStorage();
 }
 
 /**
@@ -67,6 +79,7 @@ const deleteCompleted = () => {
  */
 const setSelectedFilter = (newFilter = Filters.All) => {
   state.filter = newFilter;
+  saveStateStorage();
 }
 
 const getCurrentFilter = () => {
