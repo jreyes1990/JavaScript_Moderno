@@ -69,7 +69,7 @@ const deleteTarea = (tareaId) => {
 }
 
 const deleteCompleted = () => {
-  state.tareas = state.tareas.filter(tarea => tarea.done);
+  state.tareas = state.tareas.filter(tarea => !tarea.done);
   saveStateStorage();
 }
 

@@ -3,6 +3,7 @@ import tareaStore from '../store/tarea.store';
 import { renderTareas } from './use_cases';
 
 const elementIds = {
+  clearCompleted: '.clear-completed',
   tareaList: '.todo-list',
   newTodoInput: '#new-todo-input',
 }
@@ -29,6 +30,7 @@ export const App = (elementoId) => {
   // TODO: Referencias HTML
   const newDescriptionInput = document.querySelector(elementIds.newTodoInput);
   const tareaListUl = document.querySelector(elementIds.tareaList);
+  const clearButtonCompleted = document.querySelector(elementIds.clearCompleted);
 
   // TODO: Listeners
   newDescriptionInput.addEventListener('keyup', (event) => {
@@ -53,6 +55,11 @@ export const App = (elementoId) => {
     if(!element || !isDestroyElement) return;
 
     tareaStore.deleteTarea(element.getAttribute('data-id'));
+    displayTareas();
+  });
+
+  clearButtonCompleted.addEventListener('click', () => {
+    tareaStore.deleteCompleted();
     displayTareas();
   });
 }
