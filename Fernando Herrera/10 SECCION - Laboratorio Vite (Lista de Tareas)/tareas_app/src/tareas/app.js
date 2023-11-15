@@ -45,4 +45,14 @@ export const App = (elementoId) => {
     tareaStore.toggleTarea(element.getAttribute('data-id'));
     displayTareas();
   });
+
+  tareaListUl.addEventListener('click', (event) => {
+    const isDestroyElement = event.target.className === 'destroy';
+    const element = event.target.closest('[data-id]');
+
+    if(!element || !isDestroyElement) return;
+
+    tareaStore.deleteTarea(element.getAttribute('data-id'));
+    displayTareas();
+  });
 }
