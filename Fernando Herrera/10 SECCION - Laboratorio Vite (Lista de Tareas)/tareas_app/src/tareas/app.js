@@ -28,6 +28,7 @@ export const App = (elementoId) => {
 
   // TODO: Referencias HTML
   const newDescriptionInput = document.querySelector(elementIds.newTodoInput);
+  const tareaListUl = document.querySelector(elementIds.tareaList);
 
   // TODO: Listeners
   newDescriptionInput.addEventListener('keyup', (event) => {
@@ -37,5 +38,11 @@ export const App = (elementoId) => {
     tareaStore.addTarea(event.target.value);
     displayTareas();
     event.target.value = '';
+  });
+
+  tareaListUl.addEventListener('click', (event) => {
+    const element = event.target.closest('[data-id]');
+    tareaStore.toggleTarea(element.getAttribute('data-id'));
+    displayTareas();
   });
 }
