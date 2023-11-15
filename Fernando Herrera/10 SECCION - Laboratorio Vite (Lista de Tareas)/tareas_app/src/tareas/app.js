@@ -1,11 +1,12 @@
 import html from './app.html?raw';
-import tareaStore from '../store/tarea.store';
+import tareaStore, { Filters } from '../store/tarea.store';
 import { renderTareas } from './use_cases';
 
 const elementIds = {
   clearCompleted: '.clear-completed',
   tareaList: '.todo-list',
   newTodoInput: '#new-todo-input',
+  tareaFilter: '.filtro',
 }
 
 /**
@@ -31,6 +32,7 @@ export const App = (elementoId) => {
   const newDescriptionInput = document.querySelector(elementIds.newTodoInput);
   const tareaListUl = document.querySelector(elementIds.tareaList);
   const clearButtonCompleted = document.querySelector(elementIds.clearCompleted);
+  const filterLi = document.querySelectorAll(elementIds.tareaFilter);
 
   // TODO: Listeners
   newDescriptionInput.addEventListener('keyup', (event) => {
@@ -61,5 +63,25 @@ export const App = (elementoId) => {
   clearButtonCompleted.addEventListener('click', () => {
     tareaStore.deleteCompleted();
     displayTareas();
+  });
+
+  filterLi.forEach(element => {
+    element.addEventListener('click', (element) => {
+      filterLi.forEach(elem => elem.classList.remove('selected'));
+      element.target.classList.add('selected');
+
+      switch(element.target.text){
+        case 'Todos':
+          tareaStore.setSelectedFilter(Filters.All);
+          break;
+        case 'Pendientes':
+          tareaStore.setSelectedFilter(Filters.Pending);
+          break;
+        case 'Completados':
+          tareaStore.setSelectedFilter(Filters.Completed);
+          break;
+      }
+      displayTareas();
+    });
   });
 }
