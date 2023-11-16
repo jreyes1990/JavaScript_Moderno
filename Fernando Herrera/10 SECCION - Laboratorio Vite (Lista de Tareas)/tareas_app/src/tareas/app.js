@@ -1,12 +1,13 @@
 import html from './app.html?raw';
 import tareaStore, { Filters } from '../store/tarea.store';
-import { renderTareas } from './use_cases';
+import { renderTareas, renderPending } from './use_cases';
 
 const elementIds = {
   clearCompleted: '.clear-completed',
   tareaList: '.todo-list',
   newTodoInput: '#new-todo-input',
   tareaFilter: '.filtro',
+  pendingCountLabel: '#pending-count',
 }
 
 /**
@@ -17,7 +18,12 @@ export const App = (elementoId) => {
   const displayTareas = () => {
     const tareas = tareaStore.getTareas(tareaStore.getCurrentFilter());
     renderTareas(elementIds.tareaList, tareas);
+    updatePendingCount();
     // console.log(tareas);
+  }
+
+  const updatePendingCount = () => {
+    renderPending(elementIds.pendingCountLabel);
   }
 
   // TODO: Cuando la funcion App() se llama
