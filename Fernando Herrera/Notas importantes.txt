@@ -149,5 +149,28 @@
          
        - INSTALAR NPM (UUID: Identificador único), ENLACE: https://www.npmjs.com/package/uuid
          npm install uuid
+         
+/******************************************************************************/
+-----  SECCION 11 - CALLBACKS, PROMESAS Y GENERADORES
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite@latest
+         
+       - NOMBRE DEL PROYECTO
+         advanced_app
+         
+       - SELECCION DE FRAMEWORK
+         vanilla
+         
+       - SELECCION DE VARIANT
+         JavaScript
+       
+       - ACCEDEMOS AL PROYECTO CREADO
+         cd advanced_app
+         
+       - INSTALAR NPM
+         npm install
+
+       - EJECUTAR NPM
+         npm run dev
 
 
