@@ -26,12 +26,27 @@ export const promisesComponent = (element) => {
       `;
   }
 
-  findHero(id1)
-    .then((hero1) => {
-      findHero(id2).then((hero2) => {
-        renderTwoHeroes(hero1, hero2)
-      }).catch(renderError);
-    }).catch(renderError);
+  Promise.all([
+    findHero(id1),
+    findHero(id2),
+  ]).then(([hero1, hero2]) => renderTwoHeroes(hero1, hero2))
+    .catch(renderError);
+
+  // let hero1;
+
+  // findHero(id1).then(hero => {
+  //   hero1 = hero;
+  //   return findHero(id2);
+  // }).then(hero2 => {
+  //   renderTwoHeroes(hero1, hero2);
+  // }).catch(renderError);
+
+  // findHero(id1)
+  //   .then((hero1) => {
+  //     findHero(id2).then((hero2) => {
+  //       renderTwoHeroes(hero1, hero2)
+  //     }).catch(renderError);
+  //   }).catch(renderError);
 
   // findHero(id1).then(renderHero).catch(renderError);
   // findHero(id1).then(superHero => renderHero(superHero));
