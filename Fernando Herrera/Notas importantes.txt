@@ -172,5 +172,28 @@
 
        - EJECUTAR NPM
          npm run dev
+         
+/******************************************************************************/
+-----  SECCION 12 - PETICIONES HTTP
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite@latest
+         
+       - NOMBRE DEL PROYECTO
+         http_app
+         
+       - SELECCION DE FRAMEWORK
+         vanilla
+         
+       - SELECCION DE VARIANT
+         JavaScript
+       
+       - ACCEDEMOS AL PROYECTO CREADO
+         cd advanced_app
+         
+       - INSTALAR NPM
+         npm install
+
+       - EJECUTAR NPM
+         npm run dev
 
 
