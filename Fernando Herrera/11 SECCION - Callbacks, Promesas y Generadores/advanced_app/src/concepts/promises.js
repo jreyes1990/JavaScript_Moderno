@@ -6,9 +6,17 @@ import { heroes } from "../data/heroes";
  */
 export const promisesComponent = (element) => {
   const id1 = '5d86371f233c9f2425f16916';
+  const id2 = '5d86371f97c29d020f1e1f6d';
 
   const renderHero = (hero) => {
     element.innerHTML = hero.name;
+  }
+
+  const renderTwoHeroes = (hero1, hero2) => {
+        element.innerHTML = `
+          <h3>${hero1.name}</h3>
+          <h3>${hero2.name}</h3>
+        `;
   }
 
   const renderError = (error) => {
@@ -18,8 +26,15 @@ export const promisesComponent = (element) => {
       `;
   }
 
+  findHero(id1)
+    .then((hero1) => {
+      findHero(id2).then((hero2) => {
+        renderTwoHeroes(hero1, hero2)
+      }).catch(renderError);
+    }).catch(renderError);
+
+  // findHero(id1).then(renderHero).catch(renderError);
   // findHero(id1).then(superHero => renderHero(superHero));
-  findHero(id1).then(renderHero).catch(renderError);
 }
 
 /**
