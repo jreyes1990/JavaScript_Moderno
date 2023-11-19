@@ -5,7 +5,21 @@ import { heroes } from "../data/heroes";
  * @param {HTMLDivElement} element 
  */
 export const promisesComponent = (element) => {
-  console.log('promisesComponent');
+  const id1 = '5d86371f233c9f2425f16916';
+
+  const renderHero = (hero) => {
+    element.innerHTML = hero.name;
+  }
+
+  const renderError = (error) => {
+    element.innerHTML = `
+      <h1>Error:</h1>
+      <h3>${error}</h3>
+      `;
+  }
+
+  // findHero(id1).then(superHero => renderHero(superHero));
+  findHero(id1).then(renderHero).catch(renderError);
 }
 
 /**
