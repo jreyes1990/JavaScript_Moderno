@@ -197,3 +197,32 @@
          npm run dev
 
 
+/******************************************************************************/
+-----  SECCION 13 - CRUD APP (NO FRAMEWORK)
+       - CREACION DE VITE (La version de node js debe ser superior a 12)
+         npm create vite@latest
+         
+       - NOMBRE DEL PROYECTO
+         crud_no_framework_app
+         
+       - SELECCION DE FRAMEWORK
+         vanilla
+         
+       - SELECCION DE VARIANT
+         JavaScript
+       
+       - ACCEDEMOS AL PROYECTO CREADO
+         cd crud_no_framework_app
+         
+       - INSTALAR NPM
+         npm install
+
+       - EJECUTAR NPM
+         npm run dev
+         
+       - INSTALAR NPM (JSON SERVER EN DESARROLLO), ENLACE: https://www.npmjs.com/package/json-server
+         npm install json-server --save-dev
+         
+       - EJECUTAR NPM SERVER
+         npm run server
+
