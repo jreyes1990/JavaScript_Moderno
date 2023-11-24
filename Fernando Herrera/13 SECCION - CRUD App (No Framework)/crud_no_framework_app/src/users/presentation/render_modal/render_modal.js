@@ -1,7 +1,18 @@
 import modalHtml from './render_modal.html?raw';
 import './render_modal.css';
 
-let modal;
+let modal, form;
+
+// TODO: Cargar usuario por ID
+export const showModal = () => {
+  modal?.classList.remove('hide-modal');
+}
+
+export const hideModal = () => {
+  modal?.classList.add('hide-modal');
+
+  // TODO: Reset del formulario
+}
 
 /**
  * 
@@ -13,6 +24,18 @@ export const renderModal = (element) => {
   modal = document.createElement('div');
   modal.innerHTML = modalHtml;
   modal.className = 'modal-container hide-modal';
+  form = modal.querySelector('form');
+
+  modal.addEventListener('click', (event) => {
+    if(event.target.className === 'modal-container'){
+      hideModal();
+    }
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('Formulario Enviado');
+  });
 
   element.append(modal);
 }
