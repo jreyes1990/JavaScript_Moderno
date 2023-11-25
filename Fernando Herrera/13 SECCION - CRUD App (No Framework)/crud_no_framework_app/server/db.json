@@ -1,49 +1,22 @@
 {
   "users": [
     {
-      "id": 1,
-      "isActive": false,
-      "balance": 1397.32,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Ryan",
-      "last_name": "Kent",
-      "gender": "male"
-    },
-    {
       "id": 2,
       "isActive": true,
-      "balance": 1120.82,
+      "balance": 15000,
       "avatar": "http://placehold.it/32x32",
-      "first_name": "Francine",
-      "last_name": "Ingram",
+      "first_name": "Carmen",
+      "last_name": "Lucia",
       "gender": "female"
-    },
-    {
-      "id": 3,
-      "isActive": true,
-      "balance": 2010.88,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Lee",
-      "last_name": "Howe",
-      "gender": "male"
     },
     {
       "id": 4,
-      "isActive": false,
-      "balance": 1601.54,
+      "isActive": true,
+      "balance": 12750,
       "avatar": "http://placehold.it/32x32",
-      "first_name": "Henry",
-      "last_name": "Hunt",
+      "first_name": "Jolberth",
+      "last_name": "Reyes",
       "gender": "male"
-    },
-    {
-      "id": 5,
-      "isActive": false,
-      "balance": 1455.08,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Mia",
-      "last_name": "Wade",
-      "gender": "female"
     },
     {
       "id": 6,
@@ -73,30 +46,12 @@
       "gender": "male"
     },
     {
-      "id": 9,
-      "isActive": false,
-      "balance": 3586.36,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Sheri",
-      "last_name": "Cox",
-      "gender": "female"
-    },
-    {
       "id": 10,
       "isActive": false,
       "balance": 3653.26,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Sweeney",
       "last_name": "Mcintyre",
-      "gender": "male"
-    },
-    {
-      "id": 11,
-      "isActive": true,
-      "balance": 2533.26,
-      "avatar": "http://placehold.it/32x32",
-      "first_name": "Fields",
-      "last_name": "Harrington",
       "gender": "male"
     },
     {
@@ -456,6 +411,13 @@
       "isActive": true,
       "last_name": "Reyes",
       "id": 51
+    },
+    {
+      "balance": 12750,
+      "first_name": "Jolberth",
+      "isActive": true,
+      "last_name": "Reyes",
+      "id": 52
     }
   ]
 }
