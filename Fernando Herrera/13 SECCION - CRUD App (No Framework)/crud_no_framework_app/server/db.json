@@ -101,7 +101,7 @@
     },
     {
       "id": 12,
-      "isActive": false,
+      "isActive": true,
       "balance": 1905.22,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Reeves",
